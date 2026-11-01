@@ -1,18 +1,17 @@
-name: Publicar en GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
-  pull_request:
-  workflow_dispatch:
 
+# Permisos requeridos por las versiones v5 de GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
 concurrency:
-  group: pages
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
@@ -47,12 +46,12 @@ jobs:
           path: dist
 
   deploy:
-    if: github.event_name != 'pull_request'
-    needs: build
-    runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.despliegue.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
     steps:
-      - id: despliegue
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
