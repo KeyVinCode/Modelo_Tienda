@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/*
+  Paleta monocromática azul y sombras del tema.
+  Para aplicar los colores corporativos cambia --color-accent y --color-base
+  (y las sombras si cambia el fondo). Los degradados de los botones están
+  en las utilidades btn-primary y btn-dark, al final de este archivo.
+*/
+@theme {
+  --color-base: #cddcf3;
+  --color-ink: #0f2250;
+  --color-muted: #3f5683;
+  --color-accent: #1f4fbf;
+  --color-danger: #0f2f7a;
+  --color-field: #e9f0fb;
+  --color-field-line: #9fb4d9;
+  --color-row-line: #aebfdc;
+  --color-chip: #a9c3f2;
+  --color-chip-ink: #0c2457;
+  --color-chip-strong: #1b3f94;
+  --color-prueba1: #D66060;
+  --color-prueba2:#6DD660;
+
+  --shadow-neu: 6px 6px 14px #a3b6d8, -6px -6px 14px #eaf1fd;
+  --shadow-neu-sm: 3px 3px 7px #a3b6d8, -3px -3px 7px #eaf1fd;
+  --shadow-neu-in: inset 3px 3px 7px #a3b6d8, inset -3px -3px 7px #eaf1fd;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Botón principal: azul con degradado y texto blanco */
+@utility btn-primary {
+  background-image: linear-gradient(135deg, #3b6fe0, #1f4fbf);
+  color: #fff;
+  box-shadow: 3px 3px 8px #a3b6d8, -3px -3px 8px #eaf1fd;
+  transition: box-shadow 0.15s;
+  &:active {
+    box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Botón de acción delicada (borrar, quitar, anular): azul marino */
+@utility btn-dark {
+  background-image: linear-gradient(135deg, #2a4a9a, #0f2f7a);
+  color: #fff;
+  box-shadow: 3px 3px 8px #a3b6d8, -3px -3px 8px #eaf1fd;
+  transition: box-shadow 0.15s;
+  &:active {
+    box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* Sin barras de desplazamiento visibles (el contenido sigue desplazándose con rueda, trackpad o dedo) */
+* {
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
