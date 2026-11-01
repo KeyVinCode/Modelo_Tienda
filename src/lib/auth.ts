@@ -7,7 +7,12 @@ export interface Usuario {
   rol: Rol;
 }
 
-
+/*
+  PROVISIONAL, solo para la muestra al cliente.
+  Estas cuentas viven en el código del navegador, así que cualquiera podría leerlas.
+  En la versión real, el login lo valida el backend: contraseñas con hash (argon2 o bcrypt),
+  sesión en cookie httpOnly y límite de intentos. Este archivo se reemplaza por una llamada a la API.
+*/
 const CUENTAS = [
   { id: 1, nombre: "Dueño de la tienda", usuario: "admin", clave: "demo1234", rol: "dueño" as Rol },
   { id: 2, nombre: "Empleado", usuario: "empleado", clave: "demo1234", rol: "empleado" as Rol },

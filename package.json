@@ -2,7 +2,12 @@
   "name": "catalogo-productos",
   "private": true,
   "version": "0.1.0",
+  "description": "Catálogo de productos y control de ventas para una tienda pequeña",
   "type": "module",
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",

@@ -22,7 +22,7 @@ export default function ConfirmarBorrado({ producto, onConfirmar, onCancelar }: 
         </button>
         <button
           onClick={onConfirmar}
-          className="rounded-xl bg-base px-4 py-2.5 font-semibold text-danger shadow-neu-sm active:shadow-neu-in"
+          className="btn-dark rounded-xl px-4 py-2.5 font-semibold"
         >
           Borrar
         </button>
